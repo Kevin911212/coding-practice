@@ -1,0 +1,26 @@
+def number(n):
+	count = 1
+	while n != 1:
+		if n % 2 == 0:
+			n = n / 2
+		else:
+			n = 3 * n + 1
+		count += 1
+	return count
+	
+def max_cycle(i, j):
+	if i > j:
+		i, j = j, i
+	length = 0
+	for num in range(i, j + 1):
+		length = max(length, number(num))
+	return length
+	
+while True:
+	try:
+		i, j = map(int, input().split())
+		print(i, j, max_cycle(i, j))
+			
+	except:
+		break
+		
