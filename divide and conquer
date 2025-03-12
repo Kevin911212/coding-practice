@@ -1,0 +1,28 @@
+def divide(n, m):
+	if m <= 1 or n < m:
+		print("Boring!")
+		return
+		
+	number = []
+	
+	while n > 1:
+		number.append(n)
+		if n % m != 0:
+			print("Boring!")
+			return
+			
+		n //= m
+		
+	number.append(1)
+	
+	for i in range(len(number)):
+		if i > 0:
+			print(" ", end="")
+			
+		print(number[i], end="")
+		
+	print()
+	
+while True:
+	n, m = map(int, input().split())
+	divide(n, m)
