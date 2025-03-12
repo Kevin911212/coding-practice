@@ -1,0 +1,12 @@
+def count_numbers(a, b):
+	count = 0
+	for i in range(a, b + 1):
+		if (i ** 0.5).is_integer():
+			count += 1
+	return count
+	
+while True:
+	a, b = map(int, input().split())
+	if a == 0 and b == 0:
+		break
+	print(count_numbers(a, b))
